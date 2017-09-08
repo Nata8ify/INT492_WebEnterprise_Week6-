@@ -12,5 +12,6 @@ public class RestClientTemplateApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(RestClientTemplateApplication.class, args);
 		System.out.println(((RestClient)context.getBean("rsClnt")).getAllUsers());	
+		System.out.println(((RestClient)context.getBean("rsClnt")).createUser());	
 	}
 }

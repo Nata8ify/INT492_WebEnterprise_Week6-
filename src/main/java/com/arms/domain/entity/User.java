@@ -13,8 +13,6 @@ public class User {
 	private int id;
 	private String name;
 	
-	
-	
 	public User() {
 	}
 	public User(int id, String name) {

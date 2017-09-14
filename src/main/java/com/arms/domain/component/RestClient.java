@@ -1,5 +1,8 @@
 package com.arms.domain.component;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestOperations;
@@ -21,5 +24,20 @@ public class RestClient {
 	public User createUser(){
 		User user = new User("Moore");
 		return restOperations.postForObject(URI, user, User.class);
+	}
+	
+	public String updateUser(){
+		Map<String, Integer> vars = new HashMap<String, Integer>();
+		vars.put("id", 1);
+		User user = new User(vars.get("id"),"Imp");
+		restOperations.put(URI+"/{id}", user, User.class);
+		return "user id : "+vars.get("id")+" is updated.";
+	}
+	
+	public String deleteUser(){
+		Map<String, Integer> vars = new HashMap<String, Integer>();
+		vars.put("id", 2);
+		restOperations.delete(URI+"/{id}", vars);
+		return "user id : "+vars.get("id")+" is deleted.";
 	}
 }

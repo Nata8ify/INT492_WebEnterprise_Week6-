@@ -11,8 +11,9 @@ public class RestClientTemplateApplication {
 	//public static final Logger logger = LoggerFactory.getLogger(RestClientTemplateApplication.class);
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(RestClientTemplateApplication.class, args);
-/*		System.out.println(((RestClient)context.getBean("rsClnt")).getAllUsers());	
-		System.out.println(((RestClient)context.getBean("rsClnt")).createUser());	*/
-		System.out.println(((RestClient)context.getBean("rsClnt")).deleteUser());
+		System.out.println(((RestClient)context.getBean("rsClnt")).getAllUsers());	
+		System.out.println(((RestClient)context.getBean("rsClnt")).createUser("Carl"));	
+		System.out.println(((RestClient)context.getBean("rsClnt")).updateUser(4, "David"));	
+		System.out.println(((RestClient)context.getBean("rsClnt")).deleteUser(5));
 	}
 }

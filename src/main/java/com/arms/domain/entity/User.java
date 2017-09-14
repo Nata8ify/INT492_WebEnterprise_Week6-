@@ -35,10 +35,10 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	/*@Override
+	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + "]";
-	}*/
+	}
 	
 	
 }

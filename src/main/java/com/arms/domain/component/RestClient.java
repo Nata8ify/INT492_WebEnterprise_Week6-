@@ -21,20 +21,20 @@ public class RestClient {
 		return restOperations.getForObject(URI, String.class);
 	}
 	
-	public User createUser(){
+	public User createUser(String name){
 		User user = new User("Moore");
 		return restOperations.postForObject(URI, user, User.class);
 	}
 	
-	public String updateUser(){
+	public String updateUser(int id, String name){
 		Map<String, Integer> vars = new HashMap<String, Integer>();
-		vars.put("id", 1);
+		vars.put("id", 5);
 		User user = new User(vars.get("id"),"Imp");
 		restOperations.put(URI+"/{id}", user, User.class);
 		return "user id : "+vars.get("id")+" is updated.";
 	}
 	
-	public String deleteUser(){
+	public String deleteUser(int id){
 		Map<String, Integer> vars = new HashMap<String, Integer>();
 		vars.put("id", 2);
 		restOperations.delete(URI+"/{id}", vars);

@@ -27,11 +27,9 @@ public class RestClient {
 	}
 	
 	public String updateUser(int id, String name){
-		Map<String, Integer> vars = new HashMap<String, Integer>();
-		vars.put("id", 5);
-		User user = new User(vars.get("id"),"Imp");
+		User user = new User(id, name);
 		restOperations.put(URI+"/{id}", user, User.class);
-		return "user id : "+vars.get("id")+" is updated.";
+		return "user id : "+id+" is updated.";
 	}
 	
 	public String deleteUser(int id){

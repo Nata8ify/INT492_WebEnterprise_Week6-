@@ -32,7 +32,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="todos/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<User> update(@PathVariable("id") int id, @RequestBody User user){
+	public ResponseEntity<User> update(@RequestBody User user){
 	 userRepository.save(user);
 	 return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
